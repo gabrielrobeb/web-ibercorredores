@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ibercorredores · Corredores de seguros en Chile</title>
+<meta name="description" content="Ibercorredores es una corredora de seguros en Chile. Asesoría profesional y objetiva en seguros personales, de empresa y de vida y ahorro.">
+<meta property="og:title" content="Ibercorredores · Corredores de seguros">
+<meta property="og:description" content="Tu tranquilidad es nuestra preocupación. Seguros personales, de empresa y de vida y ahorro.">
+<link rel="preload" href="fonts/newsreader-variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:Newsreader;src:url("fonts/newsreader-variable.woff2") format("woff2");font-weight:300 700;font-display:swap}
+  @font-face{font-family:Newsreader;src:url("fonts/newsreader-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+  @font-face{font-family:"Cabinet Grotesk";src:url("fonts/cabinet-regular.woff2") format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:"Cabinet Grotesk";src:url("fonts/cabinet-medium.woff2") format("woff2");font-weight:500;font-display:swap}
+  @font-face{font-family:"Cabinet Grotesk";src:url("fonts/cabinet-bold.woff2") format("woff2");font-weight:600 800;font-display:swap}
+  :root{
+    --ink:#12151C;
+    --ink-2:#1B1F28;
+    --paper:#F6F2EB;
+    --paper-2:#ECE5D8;
+    --white:#FFFFFF;
+    --red:#C8102E;
+    --red-deep:#9A0C20;
+    --gold:#F2B417;
+    --gold-soft:#F7CF5E;
+    --text:#1A1C22;
+    --muted:#47433D;
+    --line:rgba(18,21,28,.12);
+    --serif:Newsreader, Georgia, "Times New Roman", serif;
+    --sans:"Cabinet Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --radius:22px;
+    --nav-h:84px;
+    --ease:cubic-bezier(.22,.8,.24,1);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+  body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.03em;line-height:1;margin:0}
+  p{margin:0}
+  .wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+  .eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+  /* ---------- Buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:14px;height:62px;padding:0 10px 0 30px;border-radius:999px;font-family:var(--sans);font-weight:600;font-size:17px;text-decoration:none;border:0;cursor:pointer;transition:transform .35s var(--ease),background-color .3s,color .3s,border-color .3s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(0) scale(.98)}
+  .btn .arrow{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;transition:transform .35s var(--ease)}
+  .btn:hover .arrow{transform:rotate(-45deg)}
+  .btn-primary{background:var(--gold);color:var(--ink)}
+  .btn-primary .arrow{background:var(--ink);color:var(--gold)}
+  .btn-primary:hover{background:var(--gold-soft)}
+  .btn-ghost{padding:0 30px;color:#fff;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark .arrow{background:var(--gold);color:var(--ink)}
+
+  /* ---------- Nav ---------- */
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--nav-h);transition:background-color .4s,box-shadow .4s,height .4s}
+  .nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .nav.scrolled{background:rgba(246,242,235,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);--nav-h:72px}
+  .logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+  .logo{position:relative}
+  .logo img{height:68px;width:auto;transition:opacity .4s,height .4s}
+  .nav.scrolled .logo img{height:58px}
+  .nav .logo-color{position:absolute;left:0;top:50%;transform:translateY(-50%);opacity:0}
+  .nav.scrolled .logo-light{opacity:0}
+  .nav.scrolled .logo-color{opacity:1}
+  .nav-links{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+  .nav-links a{display:block;padding:10px 16px;border-radius:999px;text-decoration:none;color:#fff;font-family:var(--serif);font-weight:500;font-size:19px;transition:background-color .25s,color .4s}
+  .nav-links a:hover{background:rgba(255,255,255,.12)}
+  .nav.scrolled .nav-links a{color:var(--text)}
+  .nav.scrolled .nav-links a:hover{background:rgba(18,21,28,.06)}
+  .nav-cta{display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 7px 0 22px;border-radius:999px;background:#fff;color:var(--ink);font-family:var(--serif);font-size:18px;font-weight:600;text-decoration:none;transition:transform .3s var(--ease),background-color .3s}
+  .nav-cta span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--gold)}
+  .nav-cta:hover{transform:translateY(-1px)}
+  .nav.scrolled .nav-cta{background:var(--ink);color:#fff}
+  .nav.scrolled .nav-cta span{color:var(--ink)}
+  .menu-btn{display:none;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;cursor:pointer}
+  .nav.scrolled .menu-btn{background:rgba(18,21,28,.07);color:var(--ink)}
+  .menu-btn span{display:block;width:20px;height:2px;background:currentColor;margin:5px auto;border-radius:2px;transition:transform .3s}
+  .mobile-menu{position:fixed;inset:0;z-index:49;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:32px;gap:8px;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+  .mobile-menu a{font-family:var(--serif);font-size:clamp(30px,9vw,44px);line-height:1.15;text-decoration:none;padding:8px 0}
+  html:has(body.menu-open){overflow:hidden}
+  .mobile-menu a.btn{font-family:var(--sans);font-size:17px;margin-top:24px;align-self:flex-start}
+  body.menu-open .mobile-menu{opacity:1;visibility:visible}
+  body.menu-open .nav{background:transparent;box-shadow:none;backdrop-filter:none}
+  body.menu-open .nav .logo-light{opacity:1}
+  body.menu-open .nav .logo-color{opacity:0}
+  body.menu-open .nav .menu-btn{background:rgba(255,255,255,.14);color:#fff}
+  body.menu-open .menu-btn span:first-child{transform:translateY(3.5px) rotate(45deg)}
+  body.menu-open .menu-btn span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:var(--ink)}
+  .hero-bg{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1777466923380-faa2697fda8b?w=2400&q=80&auto=format&fit=crop") center/cover no-repeat;transform:scale(1.12);animation:heroZoom 2.6s var(--ease) forwards}
+  .hero::after{content:"";position:absolute;inset:0;background:
+      linear-gradient(180deg,rgba(12,14,20,.5) 0%,rgba(12,14,20,.12) 30%,rgba(12,14,20,.3) 62%,rgba(12,14,20,.78) 100%),
+      radial-gradient(ellipse 60% 45% at 50% 52%,rgba(12,14,20,.42),rgba(12,14,20,0) 100%)}
+  @keyframes heroZoom{to{transform:scale(1.02)}}
+  .hero-inner{position:relative;z-index:2;padding:calc(var(--nav-h) + 24px) 24px 40px;max-width:1240px}
+  .hero .eyebrow{color:var(--gold)}
+  .hero h1{font-size:clamp(40px,5.4vw,96px);margin:0 0 26px;line-height:1.02}
+  .hero h1 em{display:block;font-style:normal;color:var(--gold);white-space:nowrap}
+  .hero p.lead{font-size:clamp(17px,1.6vw,21px);line-height:1.6;max-width:760px;margin:0 auto;color:rgba(255,255,255,.88)}
+  .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+  .reveal-up{opacity:0;transform:translateY(28px);animation:up 1s var(--ease) forwards}
+  @keyframes up{to{opacity:1;transform:none}}
+
+  /* ---------- Intro / Nosotros ---------- */
+  .intro{padding:150px 0 100px}
+  .intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,96px);align-items:center}
+  .intro-media{position:relative;margin:0;border-radius:28px;overflow:hidden;aspect-ratio:4/4.6}
+  .intro-media img{width:100%;height:100%;object-fit:cover}
+  .intro-media figcaption{position:absolute;left:20px;bottom:20px;right:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 18px;border-radius:16px;background:rgba(18,21,28,.78);backdrop-filter:blur(10px);color:#fff;font-size:15px;font-weight:500}
+  .intro-media figcaption span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;font-size:12px;font-weight:700;letter-spacing:.04em}
+  .intro-media figcaption span:first-child{background:var(--red)}
+  .intro-media figcaption span:nth-child(3){background:var(--gold);color:var(--ink);margin-right:6px}
+  .intro-media figcaption i{width:18px;height:1.5px;background:rgba(255,255,255,.5)}
+  .intro h2{font-size:clamp(36px,4.4vw,64px);margin:0 0 28px}
+  .intro h2 em{font-style:normal;color:var(--red)}
+  .intro-copy p{color:var(--muted);font-size:19px;max-width:560px}
+  .intro-copy p + p{margin-top:18px}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px);margin-top:100px}
+  .facts > div{padding-top:26px;border-top:2px solid var(--ink)}
+  .facts > div:nth-child(1){border-color:var(--red)}
+  .facts > div:nth-child(2){border-color:var(--gold)}
+  .facts h3{font-size:clamp(26px,2.4vw,34px);margin-bottom:14px}
+  .facts p{color:var(--muted);font-size:16.5px}
+  .reveal{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Cifras ---------- */
+  .stats{padding:0 0 clamp(80px,8vw,120px);background:var(--paper)}
+  .stats .wrap{width:min(1440px,100% - 48px)}
+  .stats-card{position:relative;isolation:isolate;overflow:hidden;border-radius:36px;background:#0E1117;color:#fff;padding:clamp(44px,6vw,96px) clamp(28px,5vw,88px) clamp(44px,5vw,80px)}
+  .stats-card::before{content:"";position:absolute;inset:0;z-index:-2;background:url("https://images.unsplash.com/photo-1557974040-3bec341da09b?w=1800&q=70&auto=format&fit=crop") center/cover;opacity:.3;filter:saturate(.85);transform:scale(1.08);transition:transform 2.4s var(--ease)}
+  .stats-card.in::before{transform:scale(1)}
+  .stats-card::after{content:"";position:absolute;z-index:-1;width:900px;height:900px;left:-260px;bottom:-560px;border-radius:50%;background:radial-gradient(circle,rgba(242,180,23,.38) 0%,rgba(242,180,23,0) 62%)}
+  .stats-glow{position:absolute;z-index:-1;width:700px;height:700px;right:-240px;top:-380px;border-radius:50%;background:radial-gradient(circle,rgba(200,16,46,.35) 0%,rgba(200,16,46,0) 62%)}
+  .stats-arcs{position:absolute;z-index:-1;right:-140px;bottom:-40px;width:min(780px,70%);opacity:.12;pointer-events:none}
+  .stats-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:clamp(48px,6vw,90px)}
+  .stats .eyebrow{color:var(--gold)}
+  .stats h2{font-size:clamp(36px,4.2vw,66px);margin-top:0;max-width:900px}
+  .stats h2 span{color:var(--gold);white-space:nowrap}
+  .stats-head p{max-width:360px;color:rgba(255,255,255,.66);font-size:17px}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,48px);list-style:none;margin:0;padding:0}
+  .stats-grid li{position:relative;padding-top:28px}
+  .stats-grid li::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(255,255,255,.18)}
+  .stats-grid li::after{content:"";position:absolute;left:0;top:-1px;width:100%;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),#FFE08A);transform:scaleX(0);transform-origin:left;transition:transform 1.4s var(--ease)}
+  .stats-card.in .stats-grid li::after{transform:scaleX(1)}
+  .stats-card.in .stats-grid li:nth-child(2)::after{transition-delay:.15s}
+  .stats-card.in .stats-grid li:nth-child(3)::after{transition-delay:.3s}
+  .stats-card.in .stats-grid li:nth-child(4)::after{transition-delay:.45s}
+  .stats-num{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(50px,4.6vw,86px);line-height:1;letter-spacing:-.045em;white-space:nowrap;font-variant-numeric:tabular-nums;background:linear-gradient(180deg,#FFE7A3 0%,var(--gold) 55%,#C98F06 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 60px rgba(242,180,23,.25)}
+  .stats-label{display:block;margin-top:16px;font-size:16.5px;line-height:1.45;max-width:230px;color:rgba(255,255,255,.72)}
+
+  /* ---------- Proceso (sticky scroll) ---------- */
+  .process{position:relative;height:calc(100vh + 6 * 75vh);background:var(--ink);color:#fff}
+  .process-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;align-items:center}
+  .gears{position:absolute;right:-6%;top:50%;width:min(1000px,85vw);transform:translateY(-50%);opacity:.7;pointer-events:none}
+  .gears path{fill:none;stroke-width:1.4}
+  .gears .g1{stroke:rgba(242,180,23,.32)}
+  .gears .g2{stroke:rgba(200,16,46,.55)}
+  .gears .g3{stroke:rgba(255,255,255,.12)}
+  .process-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(300px,.85fr) 1.4fr;gap:60px;align-items:center}
+  .process .eyebrow{color:var(--gold)}
+  .process h2{font-size:clamp(34px,3.6vw,54px);margin:0 0 40px;text-wrap:balance}
+  .step-count{font-family:var(--serif);font-size:20px;color:rgba(255,255,255,.55);margin-bottom:14px}
+  .step-count b{color:var(--gold);font-weight:500;font-size:28px}
+  .step-descs{position:relative;min-height:120px}
+  .step-descs p{position:absolute;inset:0 0 auto 0;font-size:19px;line-height:1.6;color:rgba(255,255,255,.82);opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .step-descs p.active{opacity:1;transform:none}
+  .step-bars{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:34px;max-width:420px}
+  .step-bars i{height:3px;border-radius:3px;background:rgba(255,255,255,.16);overflow:hidden;position:relative}
+  .step-bars i::after{content:"";position:absolute;inset:0;background:var(--gold);transform-origin:left;transform:scaleX(var(--f,0))}
+  .reel-wrap{position:relative;height:min(78vh,700px);overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 26%,#000 74%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 26%,#000 74%,transparent 100%)}
+  .reel{list-style:none;margin:0;padding:0;transition:transform .8s var(--ease);will-change:transform}
+  .reel li{display:flex;align-items:baseline;gap:22px;font-family:var(--serif);font-size:clamp(46px,7.6vw,118px);line-height:1.12;letter-spacing:-.03em;color:rgba(255,255,255,.14);transition:color .6s var(--ease),transform .6s var(--ease);transform-origin:left center;transform:scale(.86)}
+  .reel li small{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.1em;color:inherit;min-width:28px}
+  .reel li.active{color:#fff;transform:none}
+  .reel li.active small{color:var(--gold)}
+  .reel li.done{color:rgba(255,255,255,.26)}
+
+  /* ---------- Seguros (stacking cards) ---------- */
+  .insurance{padding:150px 0 120px}
+  .ins-head{margin-bottom:60px}
+  .ins-head h2{font-size:clamp(38px,5vw,72px);margin-top:0;max-width:760px;text-wrap:balance}
+  .ins-head h2 em{font-style:normal;color:var(--red)}
+  .ins-head p{max-width:380px;color:var(--muted)}
+  .cards{position:relative}
+  .card{position:sticky;top:calc(var(--nav-h) + 24px);display:grid;grid-template-columns:1fr 1.15fr;height:min(720px,calc(100vh - var(--nav-h) - 48px));min-height:560px;border-radius:32px;overflow:hidden;margin-bottom:60px;box-shadow:0 -10px 40px rgba(18,21,28,.08);transform-origin:center top;will-change:transform}
+  .card:last-child{margin-bottom:0}
+  .card-media{position:relative;overflow:hidden}
+  .card-media img{width:100%;height:100%;object-fit:cover}
+  .card-body{padding:clamp(32px,4.4vw,64px);display:flex;flex-direction:column}
+  .card-tag{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+  .card h3{font-size:clamp(34px,3.6vw,54px);margin:0 0 16px}
+  .card-lead{font-size:18px;opacity:.85;max-width:520px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:30px 0 36px}
+  .chips li{font-size:14.5px;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid currentColor;border-color:var(--chip-b)}
+  .card-link{margin-top:auto;align-self:flex-start}
+  .card--personal{background:var(--white);color:var(--text);--chip-b:rgba(18,21,28,.16)}
+  .card--personal .card-tag{color:var(--red);opacity:1}
+  .card--empresa{background:var(--ink);color:#fff;--chip-b:rgba(255,255,255,.22)}
+  .card--empresa .card-tag{color:var(--gold);opacity:1}
+  .card--vida{background:var(--red);color:#fff;--chip-b:rgba(255,255,255,.35)}
+  .card--vida .btn-primary{background:#fff}
+  .card--empresa .btn-primary,.card--personal .btn-primary{}
+  .card--personal .btn-primary{background:var(--ink);color:#fff}
+  .card--personal .btn-primary .arrow{background:var(--gold);color:var(--ink)}
+
+  /* ---------- Filosofía ---------- */
+  .philo{position:relative;height:260vh;background:var(--paper);color:#fff}
+  .philo-sticky{position:sticky;top:0;height:100vh;height:100svh;padding:calc(var(--nav-h) + 12px) 24px 24px;display:grid}
+  .philo-card{position:relative;display:grid;place-items:center;border-radius:36px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#C8102E 0%,#A30D23 70%,#940B20 100%)}
+  .philo .arcs{position:absolute;right:-120px;top:-90px;width:560px;opacity:.2}
+  .philo-inner{position:relative;text-align:center;width:100%;max-width:1500px;padding:0 clamp(24px,5vw,80px)}
+  .philo .eyebrow{color:var(--gold)}
+  .philo blockquote{margin:0;font-family:var(--serif);font-size:clamp(34px,4vw,76px);line-height:1.12;letter-spacing:-.03em;font-weight:400;text-wrap:pretty}
+  .philo blockquote .w{opacity:.2;transition:opacity .35s ease}
+  .philo blockquote .w.on{opacity:1}
+  .philo blockquote .hl{color:var(--gold)}
+  .philo blockquote .br{display:block;height:.2em}
+
+  /* ---------- Aseguradoras ---------- */
+  .insurers{position:relative;background:var(--ink);color:#fff;padding:clamp(80px,9vw,130px) 0;overflow:hidden}
+  .insurers-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,7vw,110px);align-items:center}
+  .insurers .eyebrow{color:var(--gold)}
+  .insurers h2{font-size:clamp(34px,3.6vw,58px);margin:0 0 22px}
+  .insurers h2 span{color:var(--gold)}
+  .insurers-copy p{color:rgba(255,255,255,.72);font-size:18px;max-width:440px;margin-bottom:34px}
+  .insurers-panel{display:grid;min-height:320px;padding:clamp(26px,3vw,44px);border-radius:24px;background:#fff;overflow:hidden;align-items:center}
+  .insurers-slide{grid-area:1/1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:center}
+  .insurers-slide[hidden]{display:none}
+  .insurers-slide[data-count="5"]{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .insurers-slide[data-count="5"] .ins-logo{grid-column:span 2}
+  .insurers-slide[data-count="5"] .ins-logo:nth-child(4){grid-column:2/span 2}
+  .insurers-slide[data-count="5"] .ins-logo:nth-child(5){grid-column:4/span 2}
+  .ins-logo{display:flex;align-items:center;justify-content:center;min-height:96px;padding:10px;border-radius:14px;color:#2A2D35;text-align:center;line-height:1.05;opacity:.78;transition:opacity .3s}
+  .ins-logo:hover{opacity:1}
+  .lg-sans{font-family:var(--sans);font-weight:800;font-size:clamp(19px,1.7vw,26px);letter-spacing:-.02em}
+  .lg-caps{font-family:var(--sans);font-weight:700;font-size:clamp(15px,1.3vw,19px);letter-spacing:.16em;text-transform:uppercase}
+  .lg-serif{font-family:var(--serif);font-weight:500;font-size:clamp(21px,1.9vw,29px);letter-spacing:-.02em}
+  .ins-logo small{display:block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-top:5px;opacity:.7}
+  .insurers-tabs{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px}
+  .insurers-tabs button{min-height:44px;padding:8px 0;border:0;border-bottom:2px solid transparent;background:none;color:rgba(255,255,255,.6);font:500 15px/1.4 var(--sans);cursor:pointer;transition:color .25s,border-color .25s}
+  .insurers-tabs button:hover{color:#fff}
+  .insurers-tabs button[aria-selected="true"]{color:#fff;border-bottom-color:var(--gold)}
+
+  /* ---------- Preguntas ---------- */
+  .faq{padding:clamp(90px,10vw,140px) 0 0}
+  .faq-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(36px,6vw,100px);align-items:start}
+  .faq h2{font-size:clamp(36px,4.2vw,62px);margin:0 0 22px}
+  .faq h2 span{color:var(--red)}
+  .faq-side p{color:var(--muted);font-size:18px;max-width:380px}
+  .faq a{color:var(--red);font-weight:600}
+  .faq-list{border-top:1px solid var(--line)}
+  .faq-list details{border-bottom:1px solid var(--line)}
+  .faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;cursor:pointer;list-style:none;font:400 clamp(21px,1.8vw,26px)/1.25 var(--serif);letter-spacing:-.01em}
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary i{position:relative;flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);transition:background-color .3s,transform .4s var(--ease)}
+  .faq-list summary i::before,.faq-list summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.8px;margin:-.9px 0 0 -7px;background:var(--text);border-radius:2px;transition:transform .3s}
+  .faq-list summary i::after{transform:rotate(90deg)}
+  .faq-list details[open] summary i{background:var(--gold);border-color:var(--gold);transform:rotate(180deg)}
+  .faq-list details[open] summary i::after{transform:rotate(0)}
+  .faq-list details p{padding:0 60px 26px 0;color:var(--muted);font-size:17px;max-width:680px}
+
+  /* ---------- WhatsApp ---------- */
+  .wa-float{position:fixed;right:24px;bottom:24px;z-index:45;display:flex;align-items:center;gap:0;height:60px;padding:0 19px;border-radius:999px;background:#25D366;color:#fff;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(18,21,28,.22);transition:gap .35s var(--ease),transform .35s var(--ease),opacity .3s}
+  .wa-float span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .4s var(--ease)}
+  .wa-float:hover{gap:10px;transform:translateY(-2px)}
+  .wa-float:hover span{max-width:120px}
+  body.menu-open .wa-float{opacity:0;pointer-events:none}
+
+  /* ---------- Contacto ---------- */
+  .contact{padding:150px 0}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:start}
+  .contact h2{font-size:clamp(38px,4.6vw,66px);margin:0 0 24px;text-wrap:balance}
+  .contact h2 em{font-style:normal;color:var(--red)}
+  .contact-info{list-style:none;margin:44px 0 0;padding:0;display:grid;gap:14px}
+  .contact-info li{display:flex;gap:18px;align-items:center;padding:18px 22px;border-radius:18px;background:var(--white);border:1px solid var(--line);min-width:0}
+  .contact-info li > div{min-width:0}
+  .contact-info a{overflow-wrap:anywhere}
+  .contact-info .ico{width:46px;height:46px;border-radius:50%;background:var(--paper-2);color:var(--red);display:grid;place-items:center;flex-shrink:0}
+  .contact-info small{display:block;font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .contact-info a,.contact-info strong{font-weight:600;text-decoration:none;font-size:17px}
+  .contact-info a:hover{color:var(--red)}
+  .contact-info .sub{display:block;font-weight:500;font-size:15px;color:var(--muted)}
+  .contact-info a.sub{margin-top:2px}
+  .form{background:var(--ink);color:#fff;border-radius:32px;padding:clamp(28px,4vw,52px)}
+  .form h3{font-size:30px;margin-bottom:8px}
+  .form-main > p:first-of-type{color:rgba(255,255,255,.65);margin-bottom:30px;font-size:16px}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border-radius:16px;background:rgba(255,255,255,.07);margin-bottom:22px}
+  .seg input{position:absolute;opacity:0;pointer-events:none}
+  .seg label{display:block;text-align:center;padding:12px;border-radius:11px;cursor:pointer;font-weight:600;font-size:15px;color:rgba(255,255,255,.7);transition:background-color .25s,color .25s}
+  .seg input:checked + label{background:var(--gold);color:var(--ink)}
+  .seg input:focus-visible + label{outline:3px solid var(--gold);outline-offset:2px}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{display:flex;flex-direction:column;gap:8px}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:14px;font-weight:600;color:rgba(255,255,255,.8)}
+  .field input,.field select,.field textarea{width:100%;font:inherit;font-size:16px;color:#fff;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;transition:border-color .25s,background-color .25s;outline:none}
+  .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23F2B417' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
+  .field select option{color:var(--ink)}
+  .field textarea{min-height:120px;resize:vertical}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.35)}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.09)}
+  .field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#FF6B7D}
+  .field .err{display:none;font-size:13px;color:#FF8E9C}
+  .field.invalid .err{display:block}
+  .consent{display:flex;gap:12px;align-items:flex-start;margin:22px 0 28px;font-size:14px;color:rgba(255,255,255,.65)}
+  .consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--gold);flex-shrink:0}
+  .form .btn{width:100%;justify-content:space-between}
+  .form-status{margin-top:16px;font-size:15px;min-height:1.6em}
+  .form-status.err{color:#FF8E9C}
+  .form-done{display:none;text-align:center;padding:50px 10px}
+  .form-done .check{width:76px;height:76px;margin:0 auto 24px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center}
+  .form.sent .form-main{display:none}
+  .form.sent .form-done{display:block}
+
+  /* ---------- Footer ---------- */
+  .footer{background:var(--ink);color:rgba(255,255,255,.7);padding:80px 0 40px}
+  .footer-top{display:grid;grid-template-columns:1.4fr .8fr 1fr;align-items:start;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .footer .logo img{height:84px}
+  .footer-tag{margin-top:18px;max-width:340px;font-size:15px}
+  .footer nav{display:grid;gap:10px;align-content:start}
+  .footer nav a{text-decoration:none;color:#fff;font-weight:500}
+  .footer nav a:hover{color:var(--gold)}
+  .footer-contact{display:grid;gap:8px;font-style:normal;font-size:15px}
+  .footer-contact a{color:rgba(255,255,255,.8);text-decoration:none}
+  .footer-contact a:hover{color:var(--gold)}
+  .footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:28px;font-size:14px}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1020px){
+    .nav-links,.nav .nav-cta{display:none}
+    .menu-btn{display:block}
+    .intro-grid,.contact-grid{grid-template-columns:minmax(0,1fr);gap:48px}
+    .footer-top{grid-template-columns:1fr 1fr}
+    .footer-top > div:first-child{grid-column:1/-1}
+    .intro-media{aspect-ratio:4/3}
+    .facts{grid-template-columns:1fr;margin-top:64px}
+    .process-grid{grid-template-columns:minmax(0,1fr);gap:10px;align-content:center}
+    .process h2{margin:0 0 22px}
+    .step-descs{min-height:110px}
+    .reel-wrap{height:34vh}
+    .reel li{font-size:clamp(40px,11vw,80px)}
+    .gears{right:-40%;width:130vw;opacity:.55}
+    .ins-head{flex-direction:column;align-items:flex-start;gap:20px}
+    .insurers-layout,.faq-layout{grid-template-columns:minmax(0,1fr)}
+    .stats-grid{grid-template-columns:1fr 1fr;row-gap:48px}
+    .stats-head{flex-direction:column;align-items:flex-start;gap:18px}
+  }
+  @media (max-width:760px){
+    .process{height:calc(100svh + 6 * 55svh)}
+    .footer{padding-bottom:100px}
+    .contact-info li{padding:16px;gap:14px}
+    .contact-info a,.contact-info strong{font-size:16px}
+    .contact-info .sub{font-size:14px}
+    .footer-contact a{overflow-wrap:anywhere}
+    .faq-list summary{padding:22px 0;font-size:20px}
+    .form{border-radius:24px}
+    .stats{padding-bottom:72px}
+    .stats .wrap{width:calc(100% - 24px)}
+    .stats-card{border-radius:26px}
+    .stats-head{flex-direction:column;align-items:flex-start;gap:16px}
+    .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px;column-gap:20px}
+    .stats-num{font-size:clamp(38px,12vw,54px)}
+    .stats-label{font-size:15px}
+    .insurers-panel{min-height:360px;padding:20px}
+    .insurers-slide,.insurers-slide[data-count="5"]{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .insurers-slide[data-count="5"] .ins-logo,.insurers-slide[data-count="5"] .ins-logo:nth-child(4){grid-column:auto}
+    .insurers-slide[data-count="5"] .ins-logo:nth-child(5){grid-column:1/-1}
+    .ins-logo{min-height:64px}
+    .insurers-tabs{gap:16px}
+    .insurers-tabs button{font-size:14px}
+    .faq-list details p{padding-right:0}
+    .wa-float{right:16px;bottom:16px;height:56px;padding:0 17px}
+    body{font-size:16px}
+    .wrap{width:calc(100% - 32px)}
+    .logo img,.nav.scrolled .logo img{height:52px}
+    .hero-inner{padding:calc(var(--nav-h) + 30px) 16px 60px}
+    .hero h1 em{white-space:normal}
+    .hero-ctas .btn{width:100%;justify-content:center}
+    .hero-ctas .btn-primary{justify-content:space-between}
+        .intro,.insurance,.contact{padding:100px 0}
+    .card{position:relative;top:auto;grid-template-columns:1fr;min-height:0;height:auto;margin-bottom:24px;transform:none!important;filter:none!important}
+    .card-media{height:220px}
+      .fields{grid-template-columns:1fr}
+    .footer-top{grid-template-columns:1fr}
+    .process-sticky .eyebrow{display:none}
+    .step-descs p{font-size:16.5px}
+    .philo .arcs{width:320px;right:-120px;top:-60px}
+    .philo-sticky{padding:calc(var(--nav-h) + 8px) 12px 12px}
+    .philo-card{border-radius:24px}
+
+    /* ---- Pulido móvil ---- */
+    .hero-inner{padding:calc(var(--nav-h) + 16px) 16px 36px}
+    .hero h1{font-size:clamp(42px,13.4vw,62px);line-height:1.02;margin-bottom:20px;letter-spacing:-.035em}
+    .hero p.lead{font-size:16.5px;line-height:1.55}
+    .hero-ctas{margin-top:30px;gap:12px}
+    .intro{padding:72px 0 60px}
+    .insurance{padding:72px 0 56px}
+    .contact{padding:72px 0}
+    .faq{padding:72px 0 0}
+    .insurers{padding:72px 0}
+    .intro-grid,.contact-grid{gap:32px}
+    .intro h2{margin-bottom:20px}
+    .intro-copy p{font-size:17px}
+    .facts{margin-top:48px;gap:32px}
+    .facts > div{padding-top:20px}
+    .facts h3{margin-bottom:8px}
+    .ins-head{margin-bottom:32px}
+    .stats{padding-bottom:60px}
+    .stats-head{margin-bottom:40px}
+    .card-media{height:240px}
+    .card-body{padding:28px 22px 26px}
+    .card h3{font-size:34px;margin-bottom:10px}
+    .card-lead{font-size:16px}
+    .chips{margin:22px 0 26px;gap:6px}
+    .chips li{font-size:13.5px;padding:7px 12px}
+    .card-link{width:100%;justify-content:space-between}
+    .insurers h2,.faq h2,.contact h2{margin-bottom:16px}
+    .insurers-copy p{margin-bottom:26px}
+    .faq-layout{gap:24px}
+    .form{padding:26px 20px}
+    .philo{height:180svh}
+    .philo-sticky{align-content:center}
+    .philo-card{padding:88px 24px 92px}
+    .philo-inner{padding:0}
+    .philo blockquote{font-size:clamp(34px,10.6vw,48px);line-height:1.1}
+    .philo blockquote .br{height:.45em}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    .reveal,.reveal-up{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- Logo reutilizable (reemplazar por el archivo original del logo si se dispone de él) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo-mark" viewBox="0 0 430 80">
+      <g fill="none" stroke-linecap="round" transform="translate(104 0)">
+        <path d="M222 8 C 262 4, 300 22, 316 58" stroke="#C8102E" stroke-width="6"/>
+        <path d="M232 18 C 266 16, 292 32, 304 60" stroke="#C8102E" stroke-width="5"/>
+        <path d="M242 28 C 268 28, 284 40, 292 62" stroke="#C8102E" stroke-width="4"/>
+        <path d="M196 74 C 236 76, 270 70, 300 64" stroke="#F2B417" stroke-width="6"/>
+        <path d="M214 64 C 244 64, 266 60, 288 56" stroke="#F2B417" stroke-width="4"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Ibercorredores, ir al inicio">
+      <img class="logo-light" src="img/logo-ibercorredores-claro.png" alt="Ibercorredores, corredores de seguros" width="564" height="236">
+      <img class="logo-color" src="img/logo-ibercorredores.png" alt="" width="564" height="236" aria-hidden="true">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#proceso">Cómo trabajamos</a></li>
+      <li><a href="#seguros">Seguros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="nav-cta" href="#contacto">Cotizar seguro <span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4.5M11 3v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+  <a href="#nosotros">Nosotros</a>
+  <a href="#proceso">Cómo trabajamos</a>
+  <a href="#seguros">Seguros</a>
+  <a href="#preguntas">Preguntas</a>
+  <a href="#contacto">Contacto</a>
+  <a class="btn btn-primary" href="#contacto">Cotizar seguro <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+</nav>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1 class="reveal-up" style="animation-delay:.3s">Tu tranquilidad <em>es nuestra preocupación.</em></h1>
+      <p class="lead reveal-up" style="animation-delay:.5s">Asesoría profesional y objetiva en seguros para personas y empresas. Te ayudamos a elegir bien y seguimos a tu lado cuando más lo necesitas.</p>
+      <div class="hero-ctas reveal-up" style="animation-delay:.7s">
+        <a class="btn btn-primary" href="#contacto">Solicitar asesoría <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="btn btn-ghost" href="#seguros">Conocer seguros</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NOSOTROS ================= -->
+  <section class="intro" id="nosotros">
+    <div class="wrap">
+      <div class="intro-grid">
+        <figure class="intro-media reveal">
+          <img src="https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?w=1100&h=1300&q=80&auto=format&fit=crop" alt="Asesor conversando con un cliente en una oficina" loading="lazy">
+          <figcaption><span>ES</span><i></i><span>CL</span> Raíces españolas, experiencia en Chile</figcaption>
+        </figure>
+        <div class="intro-copy">
+          <h2 class="reveal">Somos corredores porque un día <em>también fuimos clientes.</em></h2>
+          <p class="reveal">Nuestros socios vivieron en primera persona lo difícil que es encontrar un asesor de seguros que no desaparezca después de vender la póliza. De esa frustración nace Ibercorredores: una corredora que se queda contigo.</p>
+          <p class="reveal">Detrás nuestro hay un grupo internacional y años de trabajo en Chile. Eso nos da algo poco común: entendemos tanto a la empresa española que llega al país como a la chilena que quiere crecer.</p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="reveal"><h3>España + Chile</h3><p>Vinculados a un grupo internacional y establecidos en Chile. Hablamos el idioma de las empresas españolas y conocemos el mercado local.</p></div>
+        <div class="reveal"><h3>Foco en empresas</h3><p>Somos un actor relevante en seguros empresariales: desde la pyme hasta proyectos de construcción y transporte internacional.</p></div>
+        <div class="reveal"><h3>Clientes de todo el mundo</h3><p>Asesoramos a personas de muchas nacionalidades. Si llegaste a Chile desde otro país, sabemos lo que necesitas para sentirte protegido.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CIFRAS ================= -->
+  <!-- MAQUETA: cifras de ejemplo. Reemplazar por los números reales de Ibercorredores. -->
+  <section class="stats" aria-labelledby="stats-title">
+    <div class="wrap">
+      <div class="stats-card" id="statsCard">
+        <span class="stats-glow" aria-hidden="true"></span>
+        <svg class="stats-arcs" viewBox="0 0 430 80" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <div class="stats-head">
+          <div>
+            <h2 id="stats-title">La confianza <span>también se mide.</span></h2>
+          </div>
+          <p>Años de experiencia, clientes que vuelven cada año y un mercado completo de aseguradoras detrás de cada recomendación.</p>
+        </div>
+        <ul class="stats-grid">
+          <li><span class="stats-num" data-count="15" data-prefix="+">+15</span><span class="stats-label">años de experiencia de nuestros socios en seguros</span></li>
+          <li><span class="stats-num" data-count="1200" data-prefix="+">+1.200</span><span class="stats-label">clientes asesorados entre personas y empresas</span></li>
+          <li><span class="stats-num" data-count="12" data-prefix="+">+12</span><span class="stats-label">aseguradoras con las que comparamos</span></li>
+          <li><span class="stats-num" data-count="95" data-suffix="%">95%</span><span class="stats-label">de nuestros clientes renueva con nosotros</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESO ================= -->
+  <section class="process" id="proceso" aria-label="Cómo trabajamos">
+    <div class="process-sticky">
+      <svg class="gears" id="gears" viewBox="0 0 900 700" aria-hidden="true">
+        <path class="g1" id="gear1"/>
+        <path class="g2" id="gear2"/>
+        <path class="g3" id="gear3"/>
+      </svg>
+      <div class="wrap process-grid">
+        <div>
+          <h2>Un proceso que no termina cuando firmas.</h2>
+          <div class="step-count"><b id="stepNum">01</b> / 06</div>
+          <div class="step-descs" id="stepDescs">
+            <p class="active">Primero te escuchamos. Entendemos tu realidad, tus riesgos y lo que de verdad necesitas proteger.</p>
+            <p>Te explicamos las alternativas con criterio profesional y objetivo, en simple y sin letra chica.</p>
+            <p>Diseñamos una propuesta de cobertura a tu medida, para ti, tu familia o tu empresa.</p>
+            <p>Cotizamos con distintas aseguradoras del mercado para conseguirte las mejores condiciones.</p>
+            <p>Gestionamos la contratación de principio a fin, para que no pierdas tiempo en trámites.</p>
+            <p>Seguimos contigo durante toda la vigencia y, sobre todo, cuando ocurre un siniestro.</p>
+          </div>
+          <div class="step-bars" id="stepBars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="reel-wrap" aria-hidden="true">
+          <ol class="reel" id="reel">
+            <li class="active"><small>01</small>Escuchamos</li>
+            <li><small>02</small>Asesoramos</li>
+            <li><small>03</small>Proponemos</li>
+            <li><small>04</small>Cotizamos</li>
+            <li><small>05</small>Contratamos</li>
+            <li><small>06</small>Acompañamos</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEGUROS ================= -->
+  <section class="insurance" id="seguros">
+    <div class="wrap">
+      <div class="ins-head">
+        <div>
+          <h2 class="reveal">Una cobertura para cada <em>etapa</em> de tu vida.</h2>
+        </div>
+      </div>
+
+      <div class="cards" id="cards">
+        <article class="card card--personal" style="--i:0">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1588352873216-61d174714a6b?w=1100&h=1200&q=80&auto=format&fit=crop" alt="Familia sentada en la entrada de su casa" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Seguros personales</h3>
+            <p class="card-lead">Protege tu hogar, tu auto y tus viajes con coberturas pensadas para tu día a día.</p>
+            <ul class="chips">
+              <li>Hogar: incendio, robo y sismo</li><li>Automóviles</li><li>SOAP</li><li>Motos</li><li>Accidentes</li><li>Asistencia en viaje</li><li>Cristales</li><li>Embarcaciones de recreo</li><li>Comunidades de propietarios</li>
+            </ul>
+            <a class="btn btn-primary card-link" href="#contacto" data-seguro="Seguros personales">Cotizar seguro personal <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </div>
+        </article>
+
+        <article class="card card--empresa" style="--i:1">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1744038148583-454c2f352ee4?w=1100&h=1200&q=80&auto=format&fit=crop" alt="Puerto de Valparaíso con grúas y contenedores" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Seguros de empresa</h3>
+            <p class="card-lead">Del emprendimiento a la gran empresa: cuidamos tus activos, tu equipo y tu operación.</p>
+            <ul class="chips">
+              <li>Property: incendio, robo y sismo</li><li>Responsabilidad civil, profesional y D&amp;O</li><li>Flotas de vehículos</li><li>Equipo móvil</li><li>Transporte nacional e internacional</li><li>Todo riesgo construcción y montaje</li><li>Garantías y créditos</li><li>Accidentes personales</li><li>Complementarios de salud</li><li>PYME</li>
+            </ul>
+            <a class="btn btn-primary card-link" href="#contacto" data-seguro="Seguros de empresa">Cotizar para mi empresa <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </div>
+        </article>
+
+        <article class="card card--vida" style="--i:2">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1685580388390-576100ae9ce3?w=1100&h=1200&q=80&auto=format&fit=crop" alt="Padres sosteniendo a su bebé" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Vida y ahorro</h3>
+            <p class="card-lead">Asegura el bienestar de los tuyos y construye tu ahorro con respaldo.</p>
+            <ul class="chips">
+              <li>Vida</li><li>Vida con ahorro</li><li>APV</li><li>Rentas vitalicias</li><li>Enfermedades de alto costo</li><li>Dental</li><li>Escolaridad</li><li>Desgravamen</li><li>Invalidez permanente</li><li>Familiares</li>
+            </ul>
+            <a class="btn btn-primary card-link" href="#contacto" data-seguro="Vida y ahorro">Cotizar vida y ahorro <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= ASEGURADORAS ================= -->
+  <!-- MAQUETA: nombres de referencia en texto. Reemplazar por los logos de las aseguradoras con las que Ibercorredores trabaja realmente. -->
+  <section class="insurers" id="aseguradoras" aria-labelledby="insurers-title">
+    <div class="wrap insurers-layout">
+      <div class="insurers-copy reveal">
+        <h2 id="insurers-title">Comparamos entre <span>varias aseguradoras.</span></h2>
+        <p>Como corredores no dependemos de una sola compañía. Cotizamos con varias y te recomendamos la que mejor se ajusta a lo que necesitas.</p>
+        <a class="btn btn-primary" href="#contacto">Comparar mi seguro <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+      <div class="insurers-carousel reveal" id="insurers" aria-roledescription="carrusel" aria-label="Aseguradoras con las que trabajamos">
+        <div class="insurers-panel">
+          <div class="insurers-slide" role="tabpanel" id="ins-p0" aria-label="Seguros generales" data-count="8"><div class="ins-logo"><span class="lg-sans">HDI<small>Seguros</small></span></div><div class="ins-logo"><span class="lg-caps">MAPFRE</span></div><div class="ins-logo"><span class="lg-serif">Zurich</span></div><div class="ins-logo"><span class="lg-sans">BCI<small>Seguros</small></span></div><div class="ins-logo"><span class="lg-caps">SURA</span></div><div class="ins-logo"><span class="lg-sans">Chubb</span></div><div class="ins-logo"><span class="lg-serif">Southbridge</span></div><div class="ins-logo"><span class="lg-serif">Reale<small>Seguros</small></span></div></div>
+          <div class="insurers-slide" role="tabpanel" id="ins-p1" aria-label="Vida y ahorro" data-count="5" hidden><div class="ins-logo"><span class="lg-serif">Consorcio</span></div><div class="ins-logo"><span class="lg-sans">MetLife</span></div><div class="ins-logo"><span class="lg-caps">BICE<small>Vida</small></span></div><div class="ins-logo"><span class="lg-serif">Security<small>Vida</small></span></div><div class="ins-logo"><span class="lg-sans">Confuturo</span></div></div>
+          <div class="insurers-slide" role="tabpanel" id="ins-p2" aria-label="Garantías y crédito" data-count="5" hidden><div class="ins-logo"><span class="lg-caps">AVLA</span></div><div class="ins-logo"><span class="lg-sans">Solunion</span></div><div class="ins-logo"><span class="lg-serif">Coface</span></div><div class="ins-logo"><span class="lg-sans">Unnio</span></div><div class="ins-logo"><span class="lg-serif">Continental<small>Seguros</small></span></div></div>
+        </div>
+        <div class="insurers-tabs" role="tablist" aria-label="Tipo de aseguradora">
+          <button role="tab" aria-selected="true" aria-controls="ins-p0">Seguros generales</button>
+          <button role="tab" aria-selected="false" aria-controls="ins-p1">Vida y ahorro</button>
+          <button role="tab" aria-selected="false" aria-controls="ins-p2">Garantías y crédito</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FILOSOFÍA ================= -->
+  <section class="philo" id="filosofia" aria-label="Nuestra filosofía">
+    <div class="philo-sticky">
+      <div class="philo-card">
+        <svg class="arcs" viewBox="0 0 430 80" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <div class="philo-inner">
+          <blockquote id="quote" data-text="Los seguros no se piensan, |se toman.| ¶ Porque los siniestros no se planean, |llegan.|">Los seguros no se piensan, se toman. Porque los siniestros no se planean, llegan.</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PREGUNTAS FRECUENTES ================= -->
+  <section class="faq" id="preguntas" aria-labelledby="faq-title">
+    <div class="wrap faq-layout">
+      <div class="faq-side reveal">
+        <h2 id="faq-title">Lo que nos preguntan <span>antes de contratar.</span></h2>
+        <p>¿Tienes otra duda? <a href="#contacto">Escríbenos</a> y te respondemos.</p>
+      </div>
+      <div class="faq-list reveal">
+          <details name="faq"><summary>¿Qué hace un corredor de seguros? <i aria-hidden="true"></i></summary><p>Un corredor es un asesor independiente: analiza lo que necesitas proteger, compara alternativas entre distintas aseguradoras y te acompaña durante toda la vigencia del seguro, incluido el momento de un siniestro.</p></details>
+          <details name="faq"><summary>¿Me cuesta más contratar con un corredor? <i aria-hidden="true"></i></summary><p>En la mayoría de los casos no. La remuneración del corredor está incluida en la prima del seguro, así que la asesoría y el acompañamiento no tienen un costo adicional para ti.</p></details>
+          <details name="faq"><summary>¿Qué hago si tengo un siniestro? <i aria-hidden="true"></i></summary><p>Primero ponte a salvo y, si es necesario, llama a emergencias. Después avísanos: hacemos la denuncia contigo ante la aseguradora y seguimos el caso hasta que se resuelva.</p></details>
+          <details name="faq"><summary>¿Trabajan solo con empresas? <i aria-hidden="true"></i></summary><p>No. Tenemos una fuerte presencia en el mundo empresarial, pero también asesoramos a personas y familias en seguros de hogar, auto, viaje, vida y ahorro.</p></details>
+          <details name="faq"><summary>¿Pueden revisar los seguros que ya tengo? <i aria-hidden="true"></i></summary><p>Sí. Revisamos tus pólizas actuales sin compromiso y te contamos si hay coberturas duplicadas, vacíos importantes o condiciones que se pueden mejorar.</p></details>
+          <details name="faq"><summary>¿Asesoran a extranjeros que viven en Chile? <i aria-hidden="true"></i></summary><p>Sí. Trabajamos con clientes de muchas nacionalidades y entendemos lo que necesita quien llega a vivir, trabajar o invertir en Chile.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTO ================= -->
+  <section class="contact" id="contacto">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <h2>Conversemos sobre lo que quieres <em>proteger.</em></h2>
+        <p style="color:var(--muted);font-size:18px;max-width:480px">Cuéntanos qué necesitas y un asesor te contactará a la brevedad con una propuesta sin compromiso.</p>
+        <ul class="contact-info">
+          <li><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small>Teléfono y WhatsApp</small><a href="tel:+56998798556">+56 9 9879 8556</a></div></li>
+          <li><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><small>Email</small><a href="mailto:comercial@ibercorredores.com">comercial@ibercorredores.com</a><a class="sub" href="mailto:administracion@ibercorredores.com">administracion@ibercorredores.com</a></div></li>
+          <li><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small>Oficina</small><a href="https://www.google.com/maps/search/?api=1&query=Estoril+50%2C+Las+Condes%2C+Santiago" target="_blank" rel="noopener">Estoril 50, oficina 712<span class="sub">Las Condes, Santiago</span></a></div></li>
+        </ul>
+      </div>
+
+      <form class="form reveal" id="form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="empresa-web" novalidate>
+        <input type="hidden" name="form-name" value="contacto">
+        <p hidden><label>No llenar: <input name="empresa-web"></label></p>
+        <div class="form-main">
+          <h3>Solicita tu asesoría</h3>
+          <p>Completa tus datos y te contactamos a la brevedad.</p>
+          <div class="seg" role="radiogroup" aria-label="Tipo de cliente">
+            <input type="radio" id="t-persona" name="cliente" value="Persona" checked><label for="t-persona">Soy persona</label>
+            <input type="radio" id="t-empresa" name="cliente" value="Empresa"><label for="t-empresa">Soy empresa</label>
+          </div>
+          <div class="fields">
+            <div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required><span class="err">Ingresa tu nombre.</span></div>
+            <div class="field"><label for="f-tel">Teléfono</label><input id="f-tel" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9 ..." required><span class="err">Ingresa un teléfono.</span></div>
+            <div class="field full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required><span class="err">Ingresa un email válido.</span></div>
+            <div class="field full"><label for="f-seguro">¿Qué te interesa?</label>
+              <select id="f-seguro" name="seguro" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option>Seguros personales</option>
+                <option>Seguros de empresa</option>
+                <option>Vida y ahorro</option>
+                <option>No estoy seguro, necesito asesoría</option>
+              </select><span class="err">Selecciona una opción.</span></div>
+            <div class="field full"><label for="f-msg">Mensaje <span style="opacity:.5;font-weight:500">(opcional)</span></label><textarea id="f-msg" name="mensaje" placeholder="Cuéntanos brevemente qué necesitas proteger"></textarea></div>
+          </div>
+          <label class="consent"><input type="checkbox" name="acepta" required id="f-ok"> Acepto que Ibercorredores me contacte para responder a mi solicitud.</label>
+          <button class="btn btn-primary" type="submit">Enviar solicitud <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </div>
+        <div class="form-done">
+          <div class="check"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h3>¡Recibimos tu solicitud!</h3>
+          <p style="color:rgba(255,255,255,.7);margin-top:10px">Un asesor te contactará muy pronto.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<a class="wa-float" href="https://wa.me/56998798556?text=Hola%2C%20quiero%20cotizar%20un%20seguro." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.44-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.23 9.43-9.44 9.43m8.03-17.46A11.27 11.27 0 0 0 12.05.72C5.8.72.7 5.8.7 12.07c0 2 .52 3.95 1.52 5.67L.6 23.6l6-1.57a11.3 11.3 0 0 0 5.43 1.38h.01c6.26 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02"/></svg><span>Escríbenos</span></a>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="logo" href="#inicio" aria-label="Ibercorredores">
+          <img class="logo-light" src="img/logo-ibercorredores-claro.png" alt="Ibercorredores, corredores de seguros" width="564" height="236" loading="lazy">
+        </a>
+        <p class="footer-tag">Seguros personales, de empresa y de vida y ahorro. Asesoría objetiva y acompañamiento de largo plazo.</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#seguros">Seguros</a>
+        <a href="#aseguradoras">Aseguradoras</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <address class="footer-contact">
+        <a href="tel:+56998798556">+56 9 9879 8556</a>
+        <a href="mailto:comercial@ibercorredores.com">comercial@ibercorredores.com</a>
+        <a href="mailto:administracion@ibercorredores.com">administracion@ibercorredores.com</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Estoril+50%2C+Las+Condes%2C+Santiago" target="_blank" rel="noopener">Estoril 50, oficina 712, Las Condes, Santiago</a>
+      </address>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Ibercorredores. Todos los derechos reservados.</span>
+      <span>Corredores de seguros · Las Condes, Santiago</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---- Nav ---- */
+  const nav = document.getElementById('nav');
+  const menuBtn = document.getElementById('menuBtn');
+  const toggleMenu = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  };
+  menuBtn.addEventListener('click', () => toggleMenu(!document.body.classList.contains('menu-open')));
+  document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+
+  /* ---- Reveal on scroll ---- */
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+  }), { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.08 + 's'; io.observe(el); });
+
+  /* ---- Gears ---- */
+  function gearPath(teeth, rOut, rIn, hole) {
+    const step = Math.PI * 2 / teeth, pts = [];
+    for (let i = 0; i < teeth; i++) {
+      const a = i * step;
+      [[rIn, a], [rOut, a + step * .18], [rOut, a + step * .47], [rIn, a + step * .65]]
+        .forEach(([r, t]) => pts.push((r * Math.cos(t)).toFixed(1) + ',' + (r * Math.sin(t)).toFixed(1)));
+    }
+    return 'M' + pts.join('L') + 'Z' +
+      `M${hole},0A${hole},${hole} 0 1,0 ${-hole},0A${hole},${hole} 0 1,0 ${hole},0Z` +
+      `M${rIn * .62},0A${rIn * .62},${rIn * .62} 0 1,0 ${-rIn * .62},0A${rIn * .62},${rIn * .62} 0 1,0 ${rIn * .62},0Z`;
+  }
+  const G = [
+    { el: gear1, t: 20, ro: 250, ri: 226, h: 46, x: 560, y: 380, dir: 1 },
+    { el: gear2, t: 12, ro: 152, ri: 130, h: 30, x: 560 - 368 * Math.cos(.55), y: 380 - 368 * Math.sin(.55), dir: -20 / 12 },
+    { el: gear3, t: 9,  ro: 100, ri: 84,  h: 20, x: 560 - 330 * Math.cos(-.62), y: 380 - 330 * Math.sin(-.62), dir: -20 / 9 },
+  ];
+  G.forEach(g => g.el.setAttribute('d', gearPath(g.t, g.ro, g.ri, g.h)));
+  const setGears = deg => G.forEach(g => g.el.setAttribute('transform', `translate(${g.x.toFixed(1)} ${g.y.toFixed(1)}) rotate(${(deg * g.dir).toFixed(2)})`));
+  setGears(0);
+
+  /* ---- Process ---- */
+  const proc = document.getElementById('proceso');
+  const reel = document.getElementById('reel');
+  const items = [...reel.children];
+  const descs = [...document.getElementById('stepDescs').children];
+  const bars = [...document.getElementById('stepBars').children];
+  const stepNum = document.getElementById('stepNum');
+  const wrapEl = reel.parentElement;
+  let current = -1;
+  function setStep(i) {
+    if (i === current) return;
+    current = i;
+    items.forEach((li, k) => { li.classList.toggle('active', k === i); li.classList.toggle('done', k < i); });
+    descs.forEach((p, k) => p.classList.toggle('active', k === i));
+    stepNum.textContent = String(i + 1).padStart(2, '0');
+    centerReel();
+  }
+  function centerReel() {
+    const li = items[Math.max(current, 0)];
+    const y = wrapEl.clientHeight / 2 - (li.offsetTop + li.offsetHeight / 2);
+    reel.style.transform = `translateY(${y}px)`;
+  }
+
+  /* ---- Stacking cards ---- */
+  const cards = [...document.querySelectorAll('.card')];
+  const mqMobile = matchMedia('(max-width:760px)');
+
+  /* ---- Philosophy quote: split into words ---- */
+  const quote = document.getElementById('quote');
+  const philo = document.getElementById('filosofia');
+  (function buildQuote() {
+    const parts = quote.dataset.text.split('|');
+    quote.textContent = '';
+    parts.forEach((part, idx) => {
+      const hl = idx % 2 === 1;
+      part.split(/\s+/).filter(Boolean).forEach(word => {
+        if (word === '¶') { const br = document.createElement('span'); br.className = 'br'; quote.appendChild(br); return; }
+        const s = document.createElement('span');
+        s.className = 'w' + (hl ? ' hl' : '');
+        s.textContent = word;
+        const prev = quote.lastChild && quote.lastChild.previousSibling;
+        if (hl && prev && prev.classList && prev.classList.contains('w')) {
+          // mantiene la palabra destacada junto a la anterior (evita que quede sola en una línea)
+          const nw = document.createElement('span');
+          nw.style.whiteSpace = 'nowrap';
+          quote.insertBefore(nw, prev);
+          nw.appendChild(prev); nw.appendChild(document.createTextNode(' ')); nw.appendChild(s);
+        } else {
+          quote.appendChild(s);
+        }
+        quote.appendChild(document.createTextNode(' '));
+      });
+    });
+  })();
+  const words = [...quote.querySelectorAll('.w')];
+  quote.setAttribute('aria-label', 'Los seguros no se piensan, se toman. Porque los siniestros no se planean, llegan.');
+
+  /* ---- Scroll loop ---- */
+  let ticking = false;
+  function onScroll() {
+    ticking = false;
+    const vh = innerHeight;
+    nav.classList.toggle('scrolled', scrollY > 40);
+
+    // process
+    const r = proc.getBoundingClientRect();
+    const p = clamp(-r.top / (r.height - vh), 0, 1);
+    setStep(Math.min(5, Math.floor(p * 6)));
+    bars.forEach((b, k) => b.style.setProperty('--f', clamp(p * 6 - k, 0, 1)));
+    if (!reduce && r.top < vh && r.bottom > 0) setGears((p * 6 - 0) * 60 + (r.top < 0 ? 0 : -r.top / vh * 20));
+
+    // stacking cards
+    if (!mqMobile.matches && !reduce) {
+      cards.forEach((c, i) => {
+        const next = cards[i + 1];
+        if (!next) return;
+        const top = parseFloat(getComputedStyle(c).top);
+        const dist = next.getBoundingClientRect().top - top;
+        const t = clamp(1 - dist / (vh * .85), 0, 1);
+        c.style.transform = `scale(${1 - t * .06})`;
+        c.style.filter = `brightness(${1 - t * .3})`;
+      });
+    }
+
+    // philosophy
+    const pr = philo.getBoundingClientRect();
+    // se llena durante el primer 55% del tramo fijo y luego se queda completa
+    const pp = clamp((-pr.top / (pr.height - vh) + .08) / .55, 0, 1);
+    const lit = reduce ? words.length : Math.round(pp * (words.length + 1));
+    words.forEach((w, k) => w.classList.toggle('on', k < lit));
+  }
+  const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
+  addEventListener('scroll', req, { passive: true });
+  addEventListener('resize', () => { centerReel(); req(); });
+  document.fonts && document.fonts.ready.then(() => { centerReel(); });
+  onScroll();
+
+  /* ---- Preselect insurance from cards ---- */
+  const sel = document.getElementById('f-seguro');
+  document.querySelectorAll('[data-seguro]').forEach(a => a.addEventListener('click', () => {
+    sel.value = a.dataset.seguro;
+    sel.closest('.field').classList.remove('invalid');
+    if (a.dataset.seguro === 'Seguros de empresa') document.getElementById('t-empresa').checked = true;
+  }));
+
+  /* ---- Cifras: contador ---- */
+  (() => {
+    const nums = [...document.querySelectorAll('.stats-num')];
+    const card = document.getElementById('statsCard');
+    if (!nums.length) return;
+    if (reduce) { card.classList.add('in'); return; }
+    const fmt = n => n.toLocaleString('es-CL');
+    const show = el => (el.dataset.prefix || '') + fmt(Math.round(+el.dataset.count * (el._t || 0))) + (el.dataset.suffix || '');
+    nums.forEach(el => { el._t = 0; el.textContent = show(el); });
+    const obs = new IntersectionObserver(entries => entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      obs.disconnect();
+      card.classList.add('in');
+      const t0 = performance.now() + 250, dur = 1900;
+      const tick = now => {
+        const k = Math.max(0, Math.min(1, (now - t0) / dur)), e = 1 - Math.pow(1 - k, 3);
+        nums.forEach(el => { el._t = e; el.textContent = show(el); });
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }), { threshold: .35 });
+    obs.observe(card);
+  })();
+
+  /* ---- Aseguradoras: carrusel ---- */
+  (() => {
+    const car = document.getElementById('insurers');
+    if (!car) return;
+    const slides = [...car.querySelectorAll('.insurers-slide')];
+    const tabs = [...car.querySelectorAll('[role=tab]')];
+    const ease = 'cubic-bezier(.22,.8,.24,1)';
+    let cur = 0, visible = false, paused = false, busy = false, timer;
+    function go(i) {
+      if (i === cur || busy) return;
+      const prev = slides[cur], next = slides[i];
+      tabs[cur].setAttribute('aria-selected', 'false');
+      tabs[i].setAttribute('aria-selected', 'true');
+      cur = i;
+      next.hidden = false;
+      if (reduce) { prev.hidden = true; return; }
+      busy = true;
+      const out = prev.animate([{opacity:1,transform:'none',filter:'blur(0)'},{opacity:0,transform:'translateY(-8px) scale(.98)',filter:'blur(4px)'}], {duration:480, easing:ease, fill:'forwards'});
+      const inc = next.animate([{opacity:0,transform:'translateY(8px) scale(1.02)',filter:'blur(4px)'},{opacity:1,transform:'none',filter:'blur(0)'}], {duration:560, easing:ease, fill:'forwards'});
+      Promise.allSettled([out.finished, inc.finished]).then(() => { prev.hidden = true; out.cancel(); inc.cancel(); busy = false; });
+    }
+    function schedule() {
+      clearTimeout(timer);
+      if (visible && !paused && !reduce && !document.hidden) timer = setTimeout(() => { go((cur + 1) % slides.length); schedule(); }, 3000);
+    }
+    tabs.forEach((t, i) => t.addEventListener('click', () => { go(i); schedule(); }));
+    car.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { paused = true; schedule(); } });
+    car.addEventListener('pointerleave', () => { paused = false; schedule(); });
+    car.addEventListener('focusin', () => { paused = true; schedule(); });
+    car.addEventListener('focusout', e => { if (!car.contains(e.relatedTarget)) { paused = false; schedule(); } });
+    document.addEventListener('visibilitychange', schedule);
+    new IntersectionObserver(en => { visible = en[0].isIntersecting; schedule(); }, { threshold: .3 }).observe(car);
+  })();
+
+  /* ---- Form ---- */
+  const form = document.getElementById('form');
+  const status = document.getElementById('formStatus');
+  const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  function validate() {
+    let ok = true;
+    form.querySelectorAll('[required]').forEach(el => {
+      const f = el.closest('.field');
+      let valid = el.type === 'checkbox' ? el.checked : el.value.trim() !== '';
+      if (el.type === 'email') valid = emailOk(el.value.trim());
+      if (f) f.classList.toggle('invalid', !valid);
+      if (!valid) ok = false;
+    });
+    return ok;
+  }
+  form.querySelectorAll('input,select,textarea').forEach(el => el.addEventListener('input', () => {
+    const f = el.closest('.field'); if (f) f.classList.remove('invalid');
+  }));
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    status.className = 'form-status'; status.textContent = '';
+    if (!validate()) {
+      status.className = 'form-status err';
+      status.textContent = document.getElementById('f-ok').checked ? 'Revisa los campos marcados.' : 'Revisa los campos marcados y acepta ser contactado.';
+      const first = form.querySelector('.invalid input, .invalid select'); if (first) first.focus();
+      return;
+    }
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; status.textContent = 'Enviando…';
+    try {
+      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() });
+      if (!res.ok) throw new Error(res.status);
+      form.classList.add('sent');
+    } catch (err) {
+      status.className = 'form-status err';
+      status.textContent = 'No pudimos enviar tu solicitud. Inténtalo de nuevo o escríbenos por email.';
+    } finally { btn.disabled = false; }
+  });
+})();
+</script>
+</body>
+</html>
